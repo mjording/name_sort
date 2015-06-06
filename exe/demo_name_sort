@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "name_sort"
+
+sorter = NameSort::Sorter.new
+{
+  "|" => "./spec/fixtures/pipe.txt",
+  " " => "./spec/fixtures/space.txt",
+  "," => "./spec/fixtures/comma.txt"
+}.each_pair do |k,v|
+  sorter.input(k,v)
+end
+
+puts "Output 1"
+sorter.print_names("gender")
+puts ""
+puts "Output 2"
+sorter.print_names("date_of_birth")
+puts ""
+puts "Output 3"
+sorter.print_names("date_of_birth").reverse
+puts ""
