@@ -5,9 +5,9 @@ require "name_sort"
 
 sorter = NameSort::Sorter.new
 {
-  "|" => "./spec/fixtures/pipe.txt",
-  " " => "./spec/fixtures/space.txt",
-  "," => "./spec/fixtures/comma.txt"
+  "|" => "./data/pipe.txt",
+  " " => "./data/space.txt",
+  "," => "./data/comma.txt"
 }.each_pair do |k,v|
   sorter.input(k,v)
 end
