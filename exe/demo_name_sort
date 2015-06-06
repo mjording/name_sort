@@ -5,9 +5,9 @@ require "name_sort"
 
 sorter = NameSort::Sorter.new
 {
-  "|" => "./data/pipe.txt",
-  " " => "./data/space.txt",
-  "," => "./data/comma.txt"
+  "|" => File.expand_path(File.join(File.dirname(__FILE__), "..", "data", "pipe.txt")),
+  " " => File.expand_path(File.join(File.dirname(__FILE__), "..", "data", "space.txt")),
+  "," => File.expand_path(File.join(File.dirname(__FILE__), "..", "data", "comma.txt"))
 }.each_pair do |k,v|
   sorter.input(k,v)
 end
